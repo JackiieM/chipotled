@@ -1,16 +1,28 @@
-import { FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField, InputAdornment, Button } from "@mui/material"
+import { FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField, InputAdornment, Button,
+        Dialog, DialogContent, DialogContentText, DialogTitle} from "@mui/material"
 import { Container, Stack } from "@mui/system"
 import { useState } from "react"
+
 
 const Form = () => {
     const [areaV, setAreaV] = useState("");
     const [itemV, setItemV] = useState("");
     const [proteinV, setProteinV] = useState("")
+    const [open, setOpen] = useState(false)
 
     const handleChange = (event, state) => {
         const value = event.target.value;
         state(value)
     }
+
+    const handleDialogOpen = () => {
+        setOpen(true)
+    }
+
+    const handleDialogClose = () => {
+        setOpen(false)
+    }
+
 
     return (
         <div>
@@ -68,8 +80,21 @@ const Form = () => {
                     pattern: '[0-9]*'
             }}> 
                 </TextField>
-                <Button>Chipotle'd!</Button>
+                <Button 
+                variant="contained" 
+                onClick={handleDialogOpen}>Chipotle'd!</Button>
                 </Stack>
+                    <Container>
+                        <Dialog
+                        open={open}
+                        onClose={handleDialogClose}
+                        >
+                            <DialogTitle>{"Hi"}</DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText>hi x2</DialogContentText>
+                                </DialogContent>
+                        </Dialog>
+                </Container>
             </Container>
         </div>
     )
