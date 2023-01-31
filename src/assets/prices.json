@@ -1,0 +1,212 @@
+{ "states": [
+    {
+        "state": "Alabama",
+        "chicken": 6.50,
+        "steak": 7.50,
+        "carnitas": 6.95,
+        "bbq": 7.50,
+        "sofritas": 6.50,
+        "vegetarian": 6.50,
+        "guac": 1.95        
+    },
+    {
+        "state": "Alaska",
+        "chicken": 7.93,
+        "steak": 9.15,
+        "carnitas": 8.48,
+        "bbq": 9.15,
+        "sofritas": 7.93,
+        "vegetarian": 7.93,
+        "guac": 2.38         
+    },
+    {
+        "state": "Arizona",
+        "chicken": 7.22,
+        "steak": 8.33,
+        "carnitas": 7.71,
+        "bbq": 8.33,
+        "sofritas": 7.22,
+        "vegetarian": 7.22,
+        "guac": 2.16         
+    },
+    {
+        "state": "Arkansas",
+        "chicken": 6.43,
+        "steak": 7.42,
+        "carnitas": 6.88,
+        "bbq": 7.42,
+        "sofritas": 6.43,
+        "vegetarian": 6.43,
+        "guac": 1.93         
+    },
+    {
+        "state": "California",
+        "chicken": 8.32,
+        "steak": 9.60,
+        "carnitas": 8.90,
+        "bbq": 9.60,
+        "sofritas": 8.32,
+        "vegetarian": 8.32,
+        "guac": 2.50         
+    },
+    {
+        "state": "Colorado",
+        "chicken": 7.47,
+        "steak": 8.63,
+        "carnitas": 7.99,
+        "bbq": 8.63,
+        "sofritas": 7.47,
+        "vegetarian": 7.47,
+        "guac": 2.24         
+    },
+    {
+        "state": "Connecticut",
+        "chicken": 8.06,
+        "steak": 9.30,
+        "carnitas": 8.62,
+        "bbq": 9.30,
+        "sofritas": 8.06,
+        "vegetarian": 8.06,
+        "guac": 2.42         
+    },
+    {
+        "state": "Delaware",
+        "chicken": 7.54,
+        "steak": 8.70,
+        "carnitas": 8.06,
+        "bbq": 8.70,
+        "sofritas": 7.54,
+        "vegetarian": 7.54,
+        "guac": 2.26         
+    },
+    {
+        "state": "District of Columbia",
+        "chicken": 8.71,
+        "steak": 10.05,
+        "carnitas": 9.31,
+        "bbq": 10.05,
+        "sofritas": 8.71,
+        "vegetarian": 8.71,
+        "guac": 2.61         
+    },
+    {
+        "state": "Florida",
+        "chicken": 7.28,
+        "steak": 8.40,
+        "carnitas": 7.78,
+        "bbq": 8.40,
+        "sofritas": 7.28,
+        "vegetarian": 7.28,
+        "guac": 2.18         
+    },    
+    {
+        "state": "Georgia",
+        "chicken": 6.76,
+        "steak": 7.80,
+        "carnitas": 7.23,
+        "bbq": 7.80,
+        "sofritas": 6.76,
+        "vegetarian": 6.76,
+        "guac": 2.03         
+    },
+    {
+        "state": "Hawaii",
+        "chicken": 8.64,
+        "steak": 9.98,
+        "carnitas": 9.24,
+        "bbq": 9.98,
+        "sofritas": 8.64,
+        "vegetarian": 8.64,
+        "guac": 2.59         
+    },
+    {
+        "state": "Idaho",
+        "chicken": 6.89,
+        "steak": 7.95,
+        "carnitas": 7.37,
+        "bbq": 7.95,
+        "sofritas": 6.89,
+        "vegetarian": 6.89,
+        "guac": 2.07         
+    },
+    {
+        "state": "Illinois",
+        "chicken": 7.41,
+        "steak": 8.55,
+        "carnitas": 7.92,
+        "bbq": 8.55,
+        "sofritas": 7.41,
+        "vegetarian": 7.41,
+        "guac": 2.22         
+    },
+    {
+        "state": "Indiana",
+        "chicken": 6.70,
+        "steak": 7.73,
+        "carnitas": 7.16,
+        "bbq": 7.73,
+        "sofritas": 6.70,
+        "vegetarian": 6.70,
+        "guac": 2.01        
+    },
+    {
+        "state": "Iowa",
+        "chicken": 6.63,
+        "steak": 7.65,
+        "carnitas": 7.09,
+        "bbq": 7.65,
+        "sofritas": 6.63,
+        "vegetarian": 6.63,
+        "guac": 1.99         
+    },
+    {
+        "state": "Kansas",
+        "chicken": 6.63,
+        "steak": 7.65,
+        "carnitas": 7.09,
+        "bbq": 7.65,
+        "sofritas": 6.63,
+        "vegetarian": 6.63,
+        "guac": 1.99         
+    },
+    {
+        "state": "Kentucky",
+        "chicken": 6.57,
+        "steak": 7.58,
+        "carnitas": 7.02,
+        "bbq": 7.58,
+        "sofritas": 6.57,
+        "vegetarian": 6.57,
+        "guac": 1.97         
+    },
+    {
+        "state": "Louisiana",
+        "chicken": 6.76,
+        "steak": 7.80,
+        "carnitas": 7.23,
+        "bbq": 7.80,
+        "sofritas": 6.76,
+        "vegetarian": 6.76,
+        "guac": 2.03         
+    },
+    {
+        "state": "Maine",
+        "chicken": 7.28,
+        "steak": 8.40,
+        "carnitas": 7.78,
+        "bbq": 8.40,
+        "sofritas": 7.28,
+        "vegetarian": 7.28,
+        "guac": 2.18         
+    },
+    {
+        "state": "Maryland",
+        "chicken": 8.19,
+        "steak": 9.45,
+        "carnitas": 8.76,
+        "bbq": 9.45,
+        "sofritas": 8.19,
+        "vegetarian": 8.19,
+        "guac": 2.46         
+    }
+]}
