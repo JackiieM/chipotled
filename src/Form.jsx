@@ -2,17 +2,26 @@ import { FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, 
         Dialog, DialogContent, DialogContentText, DialogTitle} from "@mui/material"
 import { Container, Stack } from "@mui/system"
 import { useState } from "react"
+import { chipotled, change } from "./logic"
 
 
 const Form = () => {
-    const [areaV, setAreaV] = useState("");
+    const [areaV, setAreaV] = useState("Maryland");
     const [itemV, setItemV] = useState("");
+    const [itemPrice, setItemPrice] = useState(0)
     const [proteinV, setProteinV] = useState("")
+    const [guac, setGuac] = useState(0)
+    const [amount, setAmount] = useState();
     const [open, setOpen] = useState(false)
 
     const handleChange = (event, state) => {
         const value = event.target.value;
+        console.log(value)
         state(value)
+    }
+
+    const handleAmount = (e) => {
+        setAmount(e.target.value)
     }
 
     const handleDialogOpen = () => {
@@ -22,6 +31,15 @@ const Form = () => {
     const handleDialogClose = () => {
         setOpen(false)
     }
+    const handleItemValue = (item, state) => {
+        if(item === "chicken" || item === "sofritas" || item === "vegetarian") {
+            state(8.19)
+        } else if (item === "steak" || item === "BBQ") {
+            state(9.45)
+        } else {
+            state(8.76)
+        }
+    } 
 
 
     return (
@@ -36,18 +54,18 @@ const Form = () => {
                         label="Area"
                         value={areaV}
                         onChange={(e) => handleChange(e, setAreaV)}>
-                            <MenuItem value={"MA"}>Maryland</MenuItem>
+                            <MenuItem value={"Maryland"}>Maryland</MenuItem>
                         </Select>
                 </FormControl>
                 <FormControl fullWidth>
-                    <InputLabel id="area">Item</InputLabel>
+                    <InputLabel id="item">Item</InputLabel>
                         <Select
-                        labelId="area"
-                        label="Area"
+                        labelId="item"
+                        label="Item"
                         value={itemV}
                         onChange={(e) => handleChange(e, setItemV)}>
-                            <MenuItem value={"BURRITO"}>Burrito</MenuItem>
-                            <MenuItem value={"BOWL"}>Bowl</MenuItem>
+                            <MenuItem value={"burrito"}>Burrito</MenuItem>
+                            <MenuItem value={"bowl"}>Bowl</MenuItem>
                         </Select>
                 </FormControl>
                 <FormControl fullWidth>
@@ -56,21 +74,26 @@ const Form = () => {
                         labelId="area"
                         label="Area"
                         value={proteinV}
-                        onChange={(e) => handleChange(e, setProteinV)}>
-                            <MenuItem value={"CHICKEN"}>Chicken</MenuItem>
-                            <MenuItem value={"STEAK"}>Steak</MenuItem>
-                            <MenuItem value={"CARNITAS"}>Carnitas</MenuItem>
+                        onChange={(e) => {handleChange(e, setProteinV);
+                                            handleItemValue(itemV, setItemPrice)}}>
+                            <MenuItem value={"chicken"}>Chicken</MenuItem>
+                            <MenuItem value={"steak"}>Steak</MenuItem>
+                            <MenuItem value={"carnitas"}>Carnitas</MenuItem>
                             <MenuItem value={"BBQ"}>BBQ</MenuItem>
-                            <MenuItem value={"SOFRITAS"}>Sofritas</MenuItem>
-                            <MenuItem value={"VEG"}>Vegetarian</MenuItem>
+                            <MenuItem value={"sofritas"}>Sofritas</MenuItem>
+                            <MenuItem value={"vegetarian"}>Vegetarian</MenuItem>
                         </Select>
                 </FormControl>
-                <FormControl>
-                    <FormLabel>Add guacamole?</FormLabel>
-                    <RadioGroup defaultValue="no guac">
-                        <FormControlLabel value="no guac" control={<Radio/>} label="No" color="warning"/>
-                        <FormControlLabel value="guac" control={<Radio/>} label="Yes" color="success"/>
-                    </RadioGroup>
+                <FormControl fullWidth>
+                    <InputLabel id="extra">Extras</InputLabel>
+                        <Select
+                        labelId="extra"
+                        label="Extra"
+                        value={guac}
+                        onChange={(e) => handleChange(e, setGuac)}>
+                            <MenuItem value={2.46}>Add guacamole</MenuItem>
+                            <MenuItem value={0}>No guacamole</MenuItem>
+                        </Select>
                 </FormControl>
                 <InputLabel id="money">Amount to Spend:</InputLabel>
                 <TextField required 
@@ -78,7 +101,8 @@ const Form = () => {
                     startAdornment: <InputAdornment position="start">$</InputAdornment>,
                     inputMode: 'numeric', 
                     pattern: '[0-9]*'
-            }}> 
+            }}
+            onChange={(e) => handleAmount(e)}> 
                 </TextField>
                 <Button 
                 variant="contained" 
@@ -91,7 +115,9 @@ const Form = () => {
                         >
                             <DialogTitle>{"Hi"}</DialogTitle>
                                 <DialogContent>
-                                    <DialogContentText>hi x2</DialogContentText>
+                                    <DialogContentText>{guac > 0 ? `With $ ${amount}, you can buy ${chipotled(amount, itemPrice, guac)} ${proteinV} chipotle ${itemV +"s"} with guacamole in the state of ${areaV}.
+                                                        That's a whole lot of beans.` : `With $ ${amount}, you can buy ${chipotled(amount, itemPrice)} ${proteinV} chipotle ${itemV +"s"} without guacamole in the state of ${areaV}.
+                                                        That's a whole lot of beans.`}</DialogContentText>
                                 </DialogContent>
                         </Dialog>
                 </Container>
